@@ -9,5 +9,6 @@ npm run dev
 正式环境打包
 npm run build
 
+访问：
+http://localhost:6006
 
-系统盘目录，建立日志文件夹logs

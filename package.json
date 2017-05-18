@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node-dev app",
-    "dev": "node app",
+    "start": "node-dev app.js",
+    "dev": "node app-dev.js",
     "build": "webpack --watch --color --progress --hide-modules"
   },
   "author": "",
