@@ -38,11 +38,12 @@ module.exports = {
             //.css 文件使用 style-loader 和 css-loader 来处理
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract(['css-loader?sourceMap','sass-loader?sourceMap'])// "style!css!sass"
+                // loader: ExtractTextPlugin.extract(['css-loader?sourceMap','sass-loader?sourceMap'])// "style!css!sass"
+                loader: "style!css!sass"
             },
             {
                 test: /\.css$/,
-                loader: "style!css"// "style!css!sass"
+                loader: "style!css"
             },
             {
                 test: /\.js$/,
@@ -58,7 +59,14 @@ module.exports = {
         extensions: ['', '.js']
     },
     plugins: [
-            new ExtractTextPlugin('[name].css')
+            // new ExtractTextPlugin('[name].css'),
+            //压缩js 
+            new webpack.optimize.UglifyJsPlugin({
+                minimize: true,
+                compress: {
+                    warnings: false
+                }
+            })
             // new webpack.HotModuleReplacementPlugin(),
             // new webpack.NoErrorsPlugin()
      ]
